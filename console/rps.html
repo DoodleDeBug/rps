@@ -10,6 +10,11 @@
     // scores
     let playerScore = 0;
     let computerScore = 0;
+
+    // variables
+			const winMessage = 'You Won!';
+			const loseMessage = 'You Lost!';
+			const tieMessage = 'It\'s A Tie!';
     
     function game () {
       
@@ -25,13 +30,9 @@
 		// get rock, paper or scissors input from player
 		playerSelection = prompt('Select Rock, Paper or Scissors :').toLowerCase();
 
+
 		// a single round of rock paper scissors
 		function playRound(playerSelection, computerSelection) {
-		
-			//variables
-			const winMessage = 'You Won!';
-			const loseMessage = 'You Lost!';
-			const tieMessage = 'It\'s A Tie!';
 			
 
 			let win1 = playerSelection === 'rock' && computerSelection === 'scissors';
@@ -88,6 +89,16 @@
 	game();
 	game();
 	game();
+
+	// total score and end message
+	if (playerScore > computerScore) {
+		console.log('GAME OVER! ' + 'Your Wins:' + playerScore + ' ' + 'Computer Wins:' + computerScore + ' ' +winMessage.toUpperCase() + ' Refresh the page to play again.')
+	} else if (playerScore < computerScore) {
+		console.log('GAME OVER! ' + 'Your Wins:' + playerScore + ' ' + 'Computer Wins:' + computerScore + ' ' +loseMessage.toUpperCase() + ' Refresh the page to play again.')
+	} else if (playerScore === computerScore) {
+		console.log('GAME OVER! ' + 'Your Wins:' + playerScore + ' ' + 'Computer Wins:' + computerScore + ' ' + tieMessage.toUpperCase() + ' Refresh the page to play again.')
+	}
+
 
 	</script>
 </body>
