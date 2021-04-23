@@ -23,3 +23,16 @@ p {
   text-align: center;
   padding: 10px;
 }
+
+img {
+  height: 150px;
+}
+
+.btn {
+  background-color: inherit;
+  padding: 10px;
+}
+
+.credits {
+  text-align: center;
+}
