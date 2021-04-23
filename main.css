@@ -1,0 +1,25 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+h1,
+p {
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  gap: 10%;
+  justify-content: center;
+}
+
+.tile {
+  display: flex;
+  flex-direction: column;
+  background-color: aqua;
+  justify-content: center;
+  text-align: center;
+  padding: 10px;
+}
