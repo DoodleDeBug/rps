@@ -33,6 +33,11 @@ img {
   padding: 10px;
 }
 
+.score {
+  float: right;
+  padding: 5px;
+}
+
 .credits {
   text-align: center;
 }
