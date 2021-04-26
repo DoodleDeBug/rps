@@ -50,9 +50,10 @@ img {
   scale: 1.2;
 }
 
-.score {
-  float: right;
+.score_box {
+  text-align: center;
   padding: 5px;
+  background-color: tomato;
 }
 
 .credits {
