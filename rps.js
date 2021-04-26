@@ -53,6 +53,4 @@ function game (playerSelection) {
 
       }}
 
-rock.addEventListener('click', game(rock){
-    
-});
+rock.addEventListener('click', game());
