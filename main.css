@@ -55,6 +55,10 @@ img {
   scale: 1.2;
 }
 
+.msg_container {
+  background-color: tomato;
+  height: 20px;
+}
 .credits {
   text-align: center;
   bottom: 0;
