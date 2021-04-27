@@ -40,39 +40,44 @@ function playRound(playerSelection, computerSelection) {
     (playerSelection === "Scissors" && computerSelection === "Rock") ||
     (playerSelection === "Rock" && computerSelection === "Paper");
 
-  if (win) {
-    playerScore += 1;
-    p.innerText = `Player Score:${playerScore} Computer Score: ${computerScore}`;
-    score_box.appendChild(p);
-    console.log("Player Score: " + playerScore);
-    console.log("Computer Score: " + computerScore);
-    div.innerText = `${playerSelection} beats ${computerSelection}! ${winMessage}`;
-    msg_container.appendChild(div);
-    round += 1;
-    roundNo.innerText = round;
-    return;
-  } else if (lose) {
-    computerScore += 1;
-    p.innerText = `Player Score:${playerScore} Computer Score: ${computerScore}`;
-    score_box.appendChild(p);
-    console.log("Player Score: " + playerScore);
-    console.log("Computer Score: " + computerScore);
-    div.innerText = `${computerSelection} beats ${playerSelection}! ${loseMessage}`;
-    msg_container.appendChild(div);
-    round += 1;
-    roundNo.innerText = round;
-    return;
-  } else if (playerSelection === computerSelection) {
-    p.innerText = `Player Score:${playerScore} Computer Score: ${computerScore}`;
-    score_box.appendChild(p);
-    console.log("Player Score: " + playerScore);
-    console.log("Computer Score: " + computerScore);
-    div.innerText = `You both chose ${computerSelection}. ${tieMessage}`;
-    msg_container.appendChild(div);
-    round += 1;
-    roundNo.innerText = round;
-    return;
+  while (playerScore < 5 && computerScore < 5) {
+    if (win) {
+      playerScore += 1;
+      p.innerText = `Player Score:${playerScore} Computer Score: ${computerScore}`;
+      score_box.appendChild(p);
+      // console.log("Player Score: " + playerScore);
+      // console.log("Computer Score: " + computerScore);
+      div.innerText = `${playerSelection} beats ${computerSelection}! ${winMessage}`;
+      msg_container.appendChild(div);
+      round += 1;
+      roundNo.innerText = round;
+      return;
+    } else if (lose) {
+      computerScore += 1;
+      p.innerText = `Player Score:${playerScore} Computer Score: ${computerScore}`;
+      score_box.appendChild(p);
+      // console.log("Player Score: " + playerScore);
+      // console.log("Computer Score: " + computerScore);
+      div.innerText = `${computerSelection} beats ${playerSelection}! ${loseMessage}`;
+      msg_container.appendChild(div);
+      round += 1;
+      roundNo.innerText = round;
+      return;
+    } else if (playerSelection === computerSelection) {
+      p.innerText = `Player Score:${playerScore} Computer Score: ${computerScore}`;
+      score_box.appendChild(p);
+      // console.log("Player Score: " + playerScore);
+      // console.log("Computer Score: " + computerScore);
+      div.innerText = `You both chose ${computerSelection}. ${tieMessage}`;
+      msg_container.appendChild(div);
+      round += 1;
+      roundNo.innerText = round;
+      return;
+    }
   }
+
+  div.innerText = `GAME OVER`;
+  msg_container.appendChild(div);
 }
 
 rock.addEventListener("click", this.game.bind(this, "Rock"));
