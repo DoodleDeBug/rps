@@ -42,36 +42,33 @@ function playRound(playerSelection, computerSelection) {
 
   while (playerScore < 5 && computerScore < 5) {
     if (win) {
-      playerScore += 1;
-      p.innerText = `Player Score:${playerScore} Computer Score: ${computerScore}`;
-      score_box.appendChild(p);
+      playerScore++;
+      score_box.innerText = `Player Score: ${playerScore} Computer Score: ${computerScore}`;
+      roundNo.innerText = round;
       // console.log("Player Score: " + playerScore);
       // console.log("Computer Score: " + computerScore);
       div.innerText = `${playerSelection} beats ${computerSelection}! ${winMessage}`;
       msg_container.appendChild(div);
-      round += 1;
-      roundNo.innerText = round;
+      round++;
       return;
     } else if (lose) {
-      computerScore += 1;
-      p.innerText = `Player Score:${playerScore} Computer Score: ${computerScore}`;
-      score_box.appendChild(p);
+      computerScore++;
+      score_box.innerText = `Player Score: ${playerScore} Computer Score: ${computerScore}`;
+      roundNo.innerText = round;
       // console.log("Player Score: " + playerScore);
       // console.log("Computer Score: " + computerScore);
       div.innerText = `${computerSelection} beats ${playerSelection}! ${loseMessage}`;
       msg_container.appendChild(div);
-      round += 1;
-      roundNo.innerText = round;
+      round++;
       return;
     } else if (playerSelection === computerSelection) {
-      p.innerText = `Player Score:${playerScore} Computer Score: ${computerScore}`;
-      score_box.appendChild(p);
+      score_box.innerText = `Player Score: ${playerScore} Computer Score: ${computerScore}`;
+      roundNo.innerText = round;
       // console.log("Player Score: " + playerScore);
       // console.log("Computer Score: " + computerScore);
       div.innerText = `You both chose ${computerSelection}. ${tieMessage}`;
       msg_container.appendChild(div);
-      round += 1;
-      roundNo.innerText = round;
+      round++;
       return;
     }
   }

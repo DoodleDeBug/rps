@@ -1,7 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Antonio:wght@100&family=Bungee+Shade&family=VT323&display=swap");
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: "VT323", monospace;
+  font-size: 30px;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background-image: url(./assets/bg.jpg);
+}
+
+main {
+  background-color: white;
+  margin: 0 auto;
+  padding: 2% 10%;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 10px 10px 5px #00000049;
+}
+
+a {
+  text-decoration: none;
+  color: #f6eb14;
 }
 
 h1,
@@ -12,14 +36,19 @@ p {
 h1 {
   padding: 50px;
   font-size: 60px;
-  letter-spacing: 2px;
+  letter-spacing: 10px;
+  font-family: "Bungee Shade", cursive;
+  color: #ef4423;
 }
 
 .msg {
-  padding: 10px;
   margin-top: 30px;
 }
 
+#roundNo {
+  color: #4faf44;
+  font-weight: bold;
+}
 .container {
   display: flex;
   justify-content: space-evenly;
@@ -37,13 +66,14 @@ h1 {
 
 img {
   height: 150px;
-  background-color: rgb(250, 191, 250);
+  background-color: #2a3492;
   padding: 10px;
   border-radius: 20px;
 }
 
 .name {
   margin-top: 1em;
+  font-family: "Antonio", sans-serif;
 }
 
 .btn {
@@ -55,15 +85,25 @@ img {
   scale: 1.2;
 }
 
+.score_box {
+  text-align: center;
+}
+
 .msg_container {
-  background-color: tomato;
-  height: 20px;
+  padding: 10px;
+  color: #ff9526;
 }
 .credits {
+  color: black;
   text-align: center;
-  bottom: 0;
+  margin-top: 50px;
   left: 0;
   right: 0;
-  position: absolute;
   padding: 10px;
+}
+
+@media (max-width: 800px) {
+  h1 {
+    font-size: 50px;
+  }
 }
