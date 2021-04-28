@@ -82,7 +82,7 @@ img {
 
 .btn:hover {
   cursor: pointer;
-  scale: 1.2;
+  transform: scale(1.2);
 }
 
 .score_box {
