@@ -22,6 +22,14 @@ const score_box = document.querySelector(".score_box");
 const div = document.createElement("div");
 const p = document.createElement("p");
 
+const refresh = document.createElement("div"); // create refresh icon
+refresh.innerText = "Refresh Game";
+refresh.classList.add("refresh"); // add class to refresh to apply css
+refresh.addEventListener("click", goRefresh);
+function goRefresh() {
+  location.href = "./index.html"; // refresh button takes you back to index.html w/out js applied yet
+}
+
 // randomly return either ‘Rock’, ‘Paper’ or ‘Scissors’
 function computerPlay() {
   let choices = ["Rock", "Paper", "Scissors"];
@@ -75,6 +83,7 @@ function playRound(playerSelection, computerSelection) {
 
   div.innerText = `GAME OVER`;
   msg_container.appendChild(div);
+  msg_container.appendChild(refresh); //insert refresh button
 }
 
 rock.addEventListener("click", this.game.bind(this, "Rock"));

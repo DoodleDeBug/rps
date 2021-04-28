@@ -92,14 +92,26 @@ img {
 .msg_container {
   padding: 10px;
   color: #ff9526;
+  display: flex;
+  padding: 5px;
+  margin-top: 10px;
 }
 .credits {
   color: black;
   text-align: center;
-  margin-top: 50px;
+  margin-top: 35px;
   left: 0;
   right: 0;
   padding: 10px;
+}
+
+.refresh {
+  color: white;
+  background-color: #ff9526;
+  margin: 0 auto;
+  cursor: pointer;
+  box-shadow: 2px 2px 5px #0000002d;
+  padding: 5px;
 }
 
 @media (max-width: 800px) {
