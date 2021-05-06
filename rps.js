@@ -48,41 +48,44 @@ function playRound(playerSelection, computerSelection) {
     (playerSelection === "Scissors" && computerSelection === "Rock") ||
     (playerSelection === "Rock" && computerSelection === "Paper");
 
-  while (playerScore < 5 && computerScore < 5) {
+  while (playerScore <= 5 && computerScore <= 5) {
+    score_box.innerHTML = `Player Score: ${playerScore} <br> Computer Score: ${computerScore}`;
+    roundNo.innerText = round;
+    msg_container.appendChild(div);
+
     if (win) {
       playerScore++;
-      score_box.innerText = `Player Score: ${playerScore} Computer Score: ${computerScore}`;
-      roundNo.innerText = round;
       // console.log("Player Score: " + playerScore);
       // console.log("Computer Score: " + computerScore);
       div.innerText = `${playerSelection} beats ${computerSelection}! ${winMessage}`;
-      msg_container.appendChild(div);
+
       round++;
       return;
     } else if (lose) {
       computerScore++;
-      score_box.innerText = `Player Score: ${playerScore} Computer Score: ${computerScore}`;
-      roundNo.innerText = round;
       // console.log("Player Score: " + playerScore);
       // console.log("Computer Score: " + computerScore);
       div.innerText = `${computerSelection} beats ${playerSelection}! ${loseMessage}`;
-      msg_container.appendChild(div);
+
       round++;
       return;
     } else if (playerSelection === computerSelection) {
-      score_box.innerText = `Player Score: ${playerScore} Computer Score: ${computerScore}`;
-      roundNo.innerText = round;
       // console.log("Player Score: " + playerScore);
       // console.log("Computer Score: " + computerScore);
       div.innerText = `You both chose ${computerSelection}. ${tieMessage}`;
-      msg_container.appendChild(div);
+
       round++;
       return;
     }
   }
+  let winner = "";
+  if (computerScore > playerScore) {
+    winner = "The Computer";
+  } else {
+    winner = "You";
+  }
 
-  div.innerText = `GAME OVER`;
-  msg_container.appendChild(div);
+  div.innerText = `GAME OVER - ${winner} Won!`;
   msg_container.appendChild(refresh); //insert refresh button
 }
 
