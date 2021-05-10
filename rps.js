@@ -48,11 +48,7 @@ function playRound(playerSelection, computerSelection) {
     (playerSelection === "Scissors" && computerSelection === "Rock") ||
     (playerSelection === "Rock" && computerSelection === "Paper");
 
-  while (playerScore <= 5 && computerScore <= 5) {
-    score_box.innerHTML = `Player Score: ${playerScore} <br> Computer Score: ${computerScore}`;
-    roundNo.innerText = round;
-    msg_container.appendChild(div);
-
+  while (playerScore < 5 && computerScore < 5) {
     if (win) {
       playerScore++;
       // console.log("Player Score: " + playerScore);
@@ -60,7 +56,6 @@ function playRound(playerSelection, computerSelection) {
       div.innerText = `${playerSelection} beats ${computerSelection}! ${winMessage}`;
 
       round++;
-      return;
     } else if (lose) {
       computerScore++;
       // console.log("Player Score: " + playerScore);
@@ -68,15 +63,17 @@ function playRound(playerSelection, computerSelection) {
       div.innerText = `${computerSelection} beats ${playerSelection}! ${loseMessage}`;
 
       round++;
-      return;
     } else if (playerSelection === computerSelection) {
       // console.log("Player Score: " + playerScore);
       // console.log("Computer Score: " + computerScore);
       div.innerText = `You both chose ${computerSelection}. ${tieMessage}`;
 
       round++;
-      return;
     }
+    score_box.innerHTML = `Player Score: ${playerScore} <br> Computer Score: ${computerScore}`;
+    roundNo.innerText = round;
+    msg_container.appendChild(div);
+    return;
   }
   let winner = "";
   if (computerScore > playerScore) {
