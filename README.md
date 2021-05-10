@@ -25,5 +25,5 @@
 
 ### Things That Could Have Been Better
 
-* The round counter doesn't immediately update after a go, it is always one round behind
+* The round counter doesn't immediately update after a go, it is always one round behind (fixed this)
 * Code could have been much cleaner, I need to work on that...
